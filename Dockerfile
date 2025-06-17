@@ -1,5 +1,5 @@
 
-FROM quay.io/keycloak/keycloak:25.0.1 AS builder
+FROM quay.io/keycloak/keycloak:26.2.5 AS builder
 
 USER root
 
@@ -12,7 +12,7 @@ COPY cert/FPTestcert5_20240610.p12 /opt/keycloak/keystore/FPTestcert5_20240610.p
 # Build with PostgreSQL support
 RUN /opt/keycloak/bin/kc.sh build --db=postgres
 
-FROM quay.io/keycloak/keycloak:25.0.1
+FROM quay.io/keycloak/keycloak:26.2.5
 
 USER root
 
