@@ -16,6 +16,7 @@ FROM quay.io/keycloak/keycloak:26.2.5
 
 USER root
 
+
 COPY --from=builder /opt/keycloak/ /opt/keycloak/
 
 EXPOSE 8080
