@@ -4,6 +4,8 @@ FROM quay.io/keycloak/keycloak:25.0.1 AS builder
 USER root
 
 COPY providers/sweden-connect-provider*.jar /opt/keycloak/providers/
+COPY providers/tools*.jar /opt/keycloak/providers/
+COPY providers/keycloak-login-customizer*.jar /opt/keycloak/providers/
 COPY providers/postgresql-42.5.4.jar /opt/keycloak/providers/
 COPY cert/bankid-root.pem /opt/keycloak/truststore/bankid-root.pem
 COPY cert/FPTestcert5_20240610.p12 /opt/keycloak/keystore/FPTestcert5_20240610.p12
